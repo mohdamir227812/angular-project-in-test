@@ -1,0 +1,56 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 bg-dark mt-5  text-white" border="2">
+            <form  [formGroup]="myform" (ngSubmit)="onsubmit()">
+
+                <div formGroupName="nameemail">
+                    <div class="form-group">
+                    <label for="username">username:</label>
+                    <input type="text"  class="form-control" placeholder="name" id="username" formControlName="username">
+                    </div>
+
+                    <div class="form-group">
+                    <label for="email">email id:</label>
+                    <input type="email"  class="form-control" placeholder="@gmail.com" id="email" formControlName="email">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="language">username:</label>
+                    <select name="" id="language" class="form-control" formControlName="language">
+                        <option value="html">html</option>
+                        <option value="java">java</option>
+                        <option value="javascript">javascript</option>
+                        <option value="python">python</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                <div class="custom-control custom-radio"  *ngFor="let gan of  gander">
+                   
+                    <input type="radio" class="custom-control-input" id="{{gan.id}}" formControlName="gander" value="{{gan.name}}">
+                    <label class="custom-control-label" for="{{gan.id}}">{{gan.name}}</label>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-success"   (click)="onclickget()">getmethod</button>
+
+                <button type="button" class="btn btn-success"   (click)="onclickset()">setvaluemethod</button>
+
+                <button type="button" class="btn btn-success"   (click)="onclickpatch()">patchvaluemethod</button>
+
+            </form>
+        </div>
+
+        <div class="col-md-6    bg-light ">
+        <p>get  method</p>
+        <ul>
+            <li>name:   {{objectget.name}}</li>
+            <li>email:   {{objectget.email}}</li>
+            <li>language:   {{objectget.language}}</li>
+            <li>gander:   {{objectget.gander}}</li>
+
+        </ul>
+        </div>
+    </div>
+</div>
