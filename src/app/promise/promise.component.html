@@ -28,7 +28,7 @@
 <div class="container">
     <div class="form-group">
         <label for="name">name</label>
-        <input type="search" class="form-control"  id="name">
+        <input type="search" class="form-control"  id="name" #inputdata>
     </div>
-    <button class="btn btn-danger"(click)="onsearch(search.value)" >click</button>
+    <button class="btn btn-danger"(click)="onsearch(inputdata)" >click</button>
 </div>
