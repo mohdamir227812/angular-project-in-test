@@ -1,1 +1,3 @@
-my first file component js
+export class firstComponent{
+    name="my first testing "
+}
